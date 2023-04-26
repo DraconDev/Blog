@@ -1,0 +1,32 @@
+{
+	"courses": [
+		{
+			"name": "Introduction to Python Programming",
+			"instructor": "John Doe",
+			"description": "In this course, you'll learn the basics of Python programming language, including syntax, data types, and control structures. You'll also learn how to create functions and modules, work with files, and use libraries to perform common tasks. By the end of the course, you'll have a solid foundation in Python and be able to start building your own applications.",
+			"duration": "6 weeks",
+			"price": "$99"
+		},
+		{
+			"name": "Web Development Fundamentals",
+			"instructor": "Jane Smith",
+			"description": "This course is an introduction to web development, covering the basics of HTML, CSS, and JavaScript. You'll learn how to create and style web pages, add interactivity with JavaScript, and work with APIs to fetch and display data. You'll also learn about responsive design and accessibility, so that your web pages are accessible to everyone. By the end of the course, you'll have built your own responsive website.",
+			"duration": "8 weeks",
+			"price": "$149"
+		},
+		{
+			"name": "Data Science with R",
+			"instructor": "Bob Johnson",
+			"description": "In this course, you'll learn the fundamentals of data science with R, including data visualization, statistical analysis, and machine learning. You'll learn how to use RStudio to import, clean, and analyze data, create visualizations, and build predictive models. You'll also learn how to use the tidyverse packages to make data wrangling easier. By the end of the course, you'll have a solid foundation in data science and be able to use R for your own data analysis projects.",
+			"duration": "10 weeks",
+			"price": "$199"
+		},
+		{
+			"name": "Introduction to Artificial Intelligence",
+			"instructor": "Sarah Lee",
+			"description": "This course is an introduction to artificial intelligence, covering the basics of machine learning, natural language processing, and computer vision. You'll learn how to use Python and popular libraries like scikit-learn, TensorFlow, and NLTK to build intelligent systems. You'll also learn about ethical considerations in AI and the impact of AI on society. By the end of the course, you'll have built your own machine learning model and be able to apply AI techniques to real-world problems.",
+			"duration": "12 weeks",
+			"price": "$249"
+		}
+	]
+}
