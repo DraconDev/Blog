@@ -5,8 +5,9 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { techBlogPosts } from "../data/popularPosts";
 
 export const PopularPosts = () => {
-    let popularContent = techBlogPosts.map((post) => (
+    let popularContent = techBlogPosts.map((post, index) => (
         <Box
+            key={index}
             sx={{
                 display: "flex",
                 justifyContent: "center",

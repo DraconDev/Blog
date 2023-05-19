@@ -16,7 +16,13 @@ export const SideBar = () => {
     ];
 
     const category_buttons = top_categories.map((category, index) => {
-        return <CustomButton index={index} text={category}></CustomButton>;
+        return (
+            <CustomButton
+                index={index}
+                key={index}
+                text={category}
+            ></CustomButton>
+        );
     });
 
     return (

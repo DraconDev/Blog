@@ -1,28 +1,59 @@
-import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
-import React from "react";
-import data from "../data/articles.json";
-import { Post } from "./Post";
-import Button from "@mui/material/Button";
-import { Box, Link } from "@mui/material";
-import { ArticleSharp } from "@mui/icons-material";
+import useSWR from "swr";
 import { BlogPost } from "../types/data_types";
+import { Post } from "./Post";
+import axios from "axios";
 
 export const Posts = () => {
-    let articles = JSON.parse(JSON.stringify(data)) as BlogPost;
+    // let articles = JSON.parse(JSON.stringify(data)) as BlogPost;
+    // for (let article of Object.values(articles)) {
+    // const article = articles[id];
+    // console.log(article, "test");
 
-    let posts: React.ReactNode[] = [];
-    for (let article of Object.values(articles)) {
-        // const article = articles[id];
-        console.log(article, "test");
-        posts.push(
-            <Post
-                key={article.id}
-                title={article.title}
-                article={article.body}
-                id={article.id}
-            ></Post>
-        );
+    // async function getPosts(link: string) {
+    //     console.log("test 3");
+    //     const response = await axios.get(link, {
+    //         headers: {
+    //             "Access-Control-Allow-Origin": "*",
+    //             "Content-Type": "application/json",
+    //         },
+    //     });
+    //     console.log(response.data, "test 2");
+    //     return await response.data;
+    // }
+
+    async function getPosts(link: string) {
+        console.log("test 3");
+        const config = {
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods":
+                    "GET, POST, PUT, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers":
+                    "Origin, X-Requested-With, Content-Type, Accept",
+            },
+        };
+        const response = await axios.get(link, config);
+        console.log(response.data, "test 2");
+        return await response.data;
     }
-    return <Container>{posts}</Container>;
+
+    const { data: articles } = useSWR<BlogPost[]>(
+        "https://newblogback.vercel.app/blog/all",
+        getPosts
+    );
+    console.log(articles, "test");
+    return (
+        <Container>
+            {articles &&
+                articles.map((article, index) => (
+                    <Post
+                        key={index}
+                        title={article.title}
+                        article={article.body}
+                        // id={+index}
+                    ></Post>
+                ))}
+        </Container>
+    );
 };
